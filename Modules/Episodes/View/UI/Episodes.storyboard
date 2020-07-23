@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cdf-x2-Yfh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Эпизоды-->
+        <scene sceneID="iiJ-yZ-k8a">
+            <objects>
+                <viewController storyboardIdentifier="EpisodesViewController" id="BHk-iU-gnj" customClass="EpisodesViewController" customModule="rm_viper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g2v-DL-8bJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Аналогичная реализация" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-C5-Zt2">
+                                <rect key="frame" x="105.5" y="437.5" width="203" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CUt-C5-Zt2" firstAttribute="centerX" secondItem="g2v-DL-8bJ" secondAttribute="centerX" id="YIl-3P-vzm"/>
+                            <constraint firstItem="CUt-C5-Zt2" firstAttribute="centerY" secondItem="g2v-DL-8bJ" secondAttribute="centerY" id="yBK-Hm-E4k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eeO-RN-R1i"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Эпизоды" id="hxH-zj-a4i"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xsz-XC-DUQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="rwx-pI-bdP" customClass="EpisodesModuleInitializer" customModule="rm_viper" customModuleProvider="target">
+                    <connections>
+                        <outlet property="episodesViewController" destination="BHk-iU-gnj" id="Rna-Pa-7bK"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1971.0144927536232" y="138.61607142857142"/>
+        </scene>
+        <!--Эпизоды-->
+        <scene sceneID="7BS-NW-E9v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cdf-x2-Yfh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Эпизоды" image="film" catalog="system" id="b5z-Ps-Are"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mKv-1l-mQ0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BHk-iU-gnj" kind="relationship" relationship="rootViewController" id="K1k-bm-2Jt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eMG-Ud-vyw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060.8695652173915" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="film" catalog="system" width="128" height="93"/>
+    </resources>
+</document>

@@ -1,0 +1,36 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+class {{ module_info.name }}Presenter: {{ module_info.name }}ModuleInput, {{ module_info.name }}ViewOutput {
+
+    weak var view: {{ module_info.name }}ViewInput!
+    var interactor: {{ module_info.name }}InteractorInput!
+    var router: {{ module_info.name }}RouterInput!
+    var input: ModuleInput?
+    var output: ModuleOutput?
+
+    func viewIsReady() {
+        input = {{ module_info.name }}Router.input
+        output = {{ module_info.name }}Router.output
+        view.setupInitialState()
+    }
+}
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}InteractorOutput {
+
+}
+
+extension {{ module_info.name }}Presenter: ModuleInput, ModuleOutput {
+    func getInputData() -> Any? {
+        return nil
+    }
+
+    func didCallback(data: Any?) {
+        output?.didCallback(data: data)
+    }
+}

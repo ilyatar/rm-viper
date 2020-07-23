@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fKb-IB-3YE">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Персонажи-->
+        <scene sceneID="Yeo-ho-3SI">
+            <objects>
+                <viewController storyboardIdentifier="CharactersViewController" id="XRB-rZ-bkA" customClass="CharactersViewController" customModule="rm_viper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8kZ-Dn-K4j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eU4-XI-QUi">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="XRB-rZ-bkA" id="XDp-dp-bdr"/>
+                                    <outlet property="delegate" destination="XRB-rZ-bkA" id="Xcl-Y3-kBW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eU4-XI-QUi" firstAttribute="top" secondItem="cLQ-H9-Dsf" secondAttribute="top" id="ABF-Zz-RBC"/>
+                            <constraint firstItem="cLQ-H9-Dsf" firstAttribute="trailing" secondItem="eU4-XI-QUi" secondAttribute="trailing" id="OWr-U6-2MC"/>
+                            <constraint firstItem="eU4-XI-QUi" firstAttribute="leading" secondItem="cLQ-H9-Dsf" secondAttribute="leading" id="dC6-hJ-WqO"/>
+                            <constraint firstItem="cLQ-H9-Dsf" firstAttribute="bottom" secondItem="eU4-XI-QUi" secondAttribute="bottom" id="mjZ-sx-dzP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cLQ-H9-Dsf"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Персонажи" id="At6-Qz-5hg"/>
+                    <connections>
+                        <outlet property="tableView" destination="eU4-XI-QUi" id="2Je-uu-MU9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QcQ-BW-6Tu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Fad-cF-i7w" customClass="CharactersModuleInitializer" customModule="rm_viper" customModuleProvider="target">
+                    <connections>
+                        <outlet property="charactersViewController" destination="XRB-rZ-bkA" id="brN-ir-qdz"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1931.8840579710147" y="135.9375"/>
+        </scene>
+        <!--Персонажи-->
+        <scene sceneID="jUc-gf-hfL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fKb-IB-3YE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Персонажи" image="person.3" catalog="system" id="By0-Xn-yCo"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wXK-3L-r8Q">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XRB-rZ-bkA" kind="relationship" relationship="rootViewController" id="dIR-oF-2BJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dKp-Vy-TbK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.7391304347827" y="135.9375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person.3" catalog="system" width="128" height="62"/>
+    </resources>
+</document>

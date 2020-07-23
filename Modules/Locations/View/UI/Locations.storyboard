@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bW0-s1-We0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Места-->
+        <scene sceneID="PLI-eD-IlZ">
+            <objects>
+                <viewController storyboardIdentifier="LocationsViewController" id="BPM-MZ-uvp" customClass="LocationsViewController" customModule="rm_viper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e16-7i-EoV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VhK-FL-DPN">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BPM-MZ-uvp" id="AyH-t7-not"/>
+                                    <outlet property="delegate" destination="BPM-MZ-uvp" id="qSr-uz-rfB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VhK-FL-DPN" firstAttribute="leading" secondItem="oJp-UT-gJt" secondAttribute="leading" id="8uk-O9-GR3"/>
+                            <constraint firstItem="oJp-UT-gJt" firstAttribute="trailing" secondItem="VhK-FL-DPN" secondAttribute="trailing" id="ahP-ma-JjJ"/>
+                            <constraint firstItem="oJp-UT-gJt" firstAttribute="bottom" secondItem="VhK-FL-DPN" secondAttribute="bottom" id="tY1-Aq-seR"/>
+                            <constraint firstItem="VhK-FL-DPN" firstAttribute="top" secondItem="oJp-UT-gJt" secondAttribute="top" id="vu5-pc-pZi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oJp-UT-gJt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Места" id="2cl-hV-K6M"/>
+                    <connections>
+                        <outlet property="tableView" destination="VhK-FL-DPN" id="5BA-gW-byZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BhK-cu-wqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="8eB-nn-rYh" customClass="LocationsModuleInitializer" customModule="rm_viper" customModuleProvider="target">
+                    <connections>
+                        <outlet property="locationsViewController" destination="BPM-MZ-uvp" id="v87-TZ-BAJ"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1931.8840579710147" y="134.59821428571428"/>
+        </scene>
+        <!--Места-->
+        <scene sceneID="y0X-s5-Gk8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bW0-s1-We0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Места" image="location" catalog="system" id="On1-9c-aDK"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nbt-Dr-avx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BPM-MZ-uvp" kind="relationship" relationship="rootViewController" id="vgo-EL-hXv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C5K-df-Vn4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.7391304347827" y="134.59821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="location" catalog="system" width="128" height="115"/>
+    </resources>
+</document>

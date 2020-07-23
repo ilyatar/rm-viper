@@ -1,0 +1,65 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+class {{ module_info.name }}ModuleInitializer: NSObject {
+
+    //Connect with object on storyboard
+    @IBOutlet weak var {{ module_info.name | downcase }}ViewController: {{ module_info.name }}ViewController!
+
+    private func configure(asRoot: Bool = false) -> UIViewController {
+        let sb = UIStoryboard(name: "{{ module_info.name }}", bundle: nil)
+        if let nc = sb.instantiateViewController(withIdentifier: "{{ module_info.name }}ViewController") as? UINavigationController {
+            {{ module_info.name | downcase }}ViewController = nc.topViewController as? {{ module_info.name }}ViewController
+        } else {
+            {{ module_info.name | downcase }}ViewController = sb.instantiateViewController(withIdentifier: "{{ module_info.name }}ViewController") as? {{ module_info.name }}ViewController
+        }
+
+        let configurator = {{ module_info.name }}ModuleConfigurator()
+        configurator.configureModuleForViewInput(viewInput: {{ module_info.name | downcase }}ViewController)
+
+	if asRoot, let nc = {{ module_info.name | downcase }}ViewController.navigationController {
+            return nc
+        } else {
+            return {{ module_info.name | downcase }}ViewController
+        }
+    }
+
+    convenience init(window: UIWindow?) {
+        self.init()
+
+        let _vc = configure(asRoot: true)
+        window?.rootViewController = _vc
+        window?.makeKeyAndVisible()
+    }
+
+    convenience init(pushIn nc: UINavigationController, animated: Bool = true) {
+        self.init()
+
+        let _vc = configure()
+        nc.pushViewController(_vc, animated: animated)
+    }
+
+    convenience init(presentIn vc: UIViewController, animated: Bool = true, completion: (() -> Void)?) {
+        self.init()
+
+        let _vc = configure()
+        if let _nc = _vc.navigationController {
+            vc.present(_nc, animated: animated, completion: completion)
+        } else {
+            vc.present(_vc, animated: animated, completion: completion)
+        }
+    }
+
+    override func awakeFromNib() {
+        let configurator = {{ module_info.name }}ModuleConfigurator()
+        configurator.configureModuleForViewInput(viewInput: {{ module_info.name | downcase }}ViewController)
+    }
+
+}

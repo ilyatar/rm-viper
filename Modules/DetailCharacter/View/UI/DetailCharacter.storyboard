@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qvy-ka-59D">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail Character View Controller-->
+        <scene sceneID="WQE-7c-HpQ">
+            <objects>
+                <viewController storyboardIdentifier="DetailCharacterViewController" id="Qvy-ka-59D" customClass="DetailCharacterViewController" customModule="rm_viper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LQl-hm-Wju">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hR9-RR-uzq">
+                                <rect key="frame" x="107" y="64" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="jJQ-aX-Trf"/>
+                                    <constraint firstAttribute="height" constant="200" id="sFc-Rq-xUO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4i-Wf-O9f">
+                                <rect key="frame" x="20" y="280" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="QRK-qq-MPw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y02-fA-gZl">
+                                <rect key="frame" x="186" y="309" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="aAz-9Y-4D6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="g4i-Wf-O9f" firstAttribute="leading" secondItem="tZc-4d-o1n" secondAttribute="leading" constant="20" id="H7z-2v-bQs"/>
+                            <constraint firstItem="tZc-4d-o1n" firstAttribute="trailing" secondItem="g4i-Wf-O9f" secondAttribute="trailing" constant="20" id="M1w-Z7-0Mh"/>
+                            <constraint firstItem="g4i-Wf-O9f" firstAttribute="top" secondItem="hR9-RR-uzq" secondAttribute="bottom" constant="16" id="PvN-CG-qlq"/>
+                            <constraint firstItem="y02-fA-gZl" firstAttribute="top" secondItem="g4i-Wf-O9f" secondAttribute="bottom" constant="8" id="YrB-2p-4c1"/>
+                            <constraint firstItem="hR9-RR-uzq" firstAttribute="top" secondItem="tZc-4d-o1n" secondAttribute="top" constant="20" id="bDo-YW-eT6"/>
+                            <constraint firstItem="y02-fA-gZl" firstAttribute="centerX" secondItem="LQl-hm-Wju" secondAttribute="centerX" id="lKa-ms-ci2"/>
+                            <constraint firstItem="hR9-RR-uzq" firstAttribute="centerX" secondItem="LQl-hm-Wju" secondAttribute="centerX" id="oe0-Ax-qBN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tZc-4d-o1n"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="I9G-eJ-Ble"/>
+                    <connections>
+                        <outlet property="icon" destination="hR9-RR-uzq" id="UgA-Xh-DYQ"/>
+                        <outlet property="nameLabel" destination="g4i-Wf-O9f" id="BXr-f7-TeL"/>
+                        <outlet property="speciesLabel" destination="y02-fA-gZl" id="gID-e1-oqE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ZL-Nf-KXt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="5MT-Bo-jl8" customClass="DetailCharacterModuleInitializer" customModule="rm_viper" customModuleProvider="target">
+                    <connections>
+                        <outlet property="detailcharacterViewController" destination="Qvy-ka-59D" id="UW9-VV-rep"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1039.1304347826087" y="142.63392857142856"/>
+        </scene>
+    </scenes>
+</document>
